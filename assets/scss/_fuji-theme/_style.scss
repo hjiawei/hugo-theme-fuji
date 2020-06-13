@@ -26,14 +26,12 @@ body {
   color: var(--color-mute);
 }
 
-header,
 .page-info {
   border-bottom: $divider;
 }
 
 .post + .post,
-.pagination,
-footer {
+.pagination {
   border-top: $divider;
 }
 
