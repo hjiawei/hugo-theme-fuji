@@ -15,7 +15,13 @@
             <div class="col-12 col-md-9 float-left content">
                 {{ block "main" . }}{{ end }}
             </div>
-            {{ partial "sidebar.html" . }}
+            <div>
+                {{ partial "sidebar.html" . }}
+                <!-- google ads -->
+                {{ if .Site.Params.googleAdsense }}
+                {{ partial "adsense_250x250.html" . }}
+                {{ end }}
+            </div>
         </div>
         {{ partial "components.html" . }}
     </main>

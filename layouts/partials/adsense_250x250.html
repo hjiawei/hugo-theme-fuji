@@ -1,0 +1,12 @@
+{{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
+<!-- square-250x250-ad -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:250px;height:250px"
+     data-ad-client="ca-pub-{{ .Site.Params.googleAdsense }}"
+     data-ad-slot="8346154141"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+{{ else }}
+<img src="https://via.placeholder.com/250x250" />
+{{ end }}
