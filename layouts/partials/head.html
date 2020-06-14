@@ -34,7 +34,14 @@
 {{ $style := resources.Get "scss/fuji.scss" | resources.ToCSS $options }}
 <link rel="stylesheet" href="{{ $style.Permalink }}" />
 {{ with .Site.Params.googleAdsense }}
-<script async data-ad-client="ca-pub-{{ . }}" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    enable_page_level_ads: true,
+    google_ad_client: "ca-pub-{{ . }}",
+    overlays: {bottom: true}
+  });
+</script>
 {{ end}}
 {{ if .Params.player }}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
