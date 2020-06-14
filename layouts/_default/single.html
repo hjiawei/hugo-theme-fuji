@@ -10,6 +10,9 @@
     {{ with .Params.player }}
     <div id="post-aplayer"></div>
     {{ end }}
+    {{ if .Site.Params.googleAdsense }}
+    {{ partial "adsense_728x90.html" . }}
+    {{ end }}
     <!-- post main content -->
     <div class="post-content markdown-body">
         {{ .Content }}
@@ -23,6 +26,9 @@
                target="_blank">{{ .Site.Params.license }}</a>{{ i18n "postCopyrightEnd" }}</p>
     </blockquote>
 </div>
+{{ end }}
+{{ if .Site.Params.googleAdsense }}
+{{ partial "adsense_square.html" . }}
 {{ end }}
 {{ if and (.Site.Params.disqusJSApi) (ne .Params.showComments false) }}
 {{ partial "comment-disqusjs.html" . }}
